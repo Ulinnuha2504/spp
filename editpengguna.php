@@ -1,0 +1,59 @@
+<?php
+include ('koneksi.php');
+$kodeuser=$_GET['kode'];
+$qdata = mysqli_query($koneksi,"SELECT*FROM pengguna where idpengguna='$kodeuser'");
+$data=mysqli_fetch_array($qdata);
+
+?>
+<div class="row column_title">
+    <div class="col-md-12">
+        <div class="page_title">
+            <h2>PENGGUNA</h2>
+        </div>
+    </div>
+</div>
+<div class="row column1">
+    <div class="col-md-12">
+        <div class="white_shd full margin_bottom_20">
+            <div class="full graph_head">
+                <div class="heading1 margin_0">
+                <h2>EDIT Pengguna</h2> 
+                </div>
+            </div>
+        <form action="proseseditpengguna.php" method="post">
+            <div class="form-group-row mb-4">
+                <label for="namapengguna" class="col-sm-2">Nama Pengguna</label>
+                <div class="col-sm-10">
+                    <input type="text" name="namapengguna" id="namapengguna" class="form-control"value="<?php echo $data['namapengguna'];?>"required>
+                    <input type="hidden" name="idpengguna" id="idpengguna" class="form-control"value="<?php echo $data['idpengguna'];?>"required>
+                </div>
+            </div>
+            <div class="form-group-row mb-4">
+                <label for="username" class="col-sm-2">Username</label>
+                <div class="col-sm-10">
+                    <input type="text" name="username" id="username" class="form-control"value="<?php echo $data['username'];?>"required>
+                </div>
+            </div>
+            <div class="form-group-row mb-4">
+                <label for="password" class="col-sm-2">Password</label>
+                <div class="col-sm-10">
+                    <input type="text" name="password" id="password" class="form-control">
+                </div>
+            </div>
+            <div class="form-group-row mb-4">
+                <label for="hakakses" class="col-sm-2">Hak Akses</label>
+                <div class="col-sm-10">
+                    <select name="hakakses"  required id="hakakses" class="form-control">
+                        <option value="<?php echo $data['hakakses'];?>"><?php echo $data['hakakses'];?></option>
+                        <option value="Admin">Admin</option>
+                        <option value="Superadmin">Superadmin</option>
+                    </select>
+                </div> 
+            </div>
+            <div class="form-group-row mb-4">
+                <button type="submit" class="form-control btn btn-success">simpan</button>
+            </div>
+        </form>
+        </div>
+    </div>
+</div>
