@@ -4,7 +4,7 @@
 $server = 'localhost';
 $username = 'root';
 $password = '';
-$database = 'administrasi';
+$database = 'pembayaran_spp';
 
 // Masukkan masing-masing variabel
 setlocale(LC_ALL, 'id-ID', 'id_ID');
