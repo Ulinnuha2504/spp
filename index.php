@@ -86,7 +86,7 @@ if (!$_SESSION['role'])
                            </li>
                         </ul>
                      </li>
-                     <li><a href="index.php?page=datapengeluaran"><i class="fa fa-bar-chart-o green_color"></i> <span>Pengeluaran</span></a></li>
+                     <li><a href="index.php?page=datapembayaran"><i class="fa fa-bar-chart-o green_color"></i> <span>Pembayaran</span></a></li>
                      <li><a href="index.php?page=laporan"><i class="fa fa-file purple_color2"></i> <span>Laporan</span></a></li>
                      <li><a href="logout.php" onclick="return confirmLogout()"><i class="fa fa-power-off red_color"></i> <span>Logout</span></a></li>
 
@@ -175,6 +175,17 @@ if (!$_SESSION['role'])
                         include 'editspp.php';
                      }elseif ($_GET['page'] == 'hapusspp') {
                         include 'hapusspp.php';
+                     }
+                   
+                     //Pembayaran
+                     elseif ($_GET['page'] == 'datapembayaran') {
+                        include 'datapembayaran.php';
+                     }
+                     elseif ($_GET['page'] == 'tambahpembayaran') {
+                        include 'tambahpembayaran.php';
+                     }
+                     elseif ($_GET['page'] == 'detailpembayaran') {
+                        include 'detailpembayaran.php';
                      }
                    
                      
